@@ -1,0 +1,75 @@
+openapi: 3.0.0
+paths:
+  /shorten_url:
+    post:
+      operationId: UrlController_create
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateShortUrlDto"
+      responses:
+        "200":
+          description: An existing short URL mapping was found and returned.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateShortUrlResponseDto"
+        "201":
+          description: A new short URL mapping was created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateShortUrlResponseDto"
+        "400":
+          description: Submitted URL did not pass validation.
+      summary: Create or return a short URL key
+      tags: &a1
+        - url
+  /shorten_url/{key}:
+    get:
+      operationId: UrlController_redirect
+      parameters:
+        - name: key
+          required: true
+          in: path
+          schema:
+            type: string
+      responses:
+        "302":
+          description: Redirects to the stored URL.
+        "404":
+          description: Short key was not found.
+      summary: Redirect to the original URL
+      tags: *a1
+info:
+  title: Courtside Backend
+  description: Scaffolded URL shortener backend API.
+  version: 0.1.0
+  contact: {}
+tags: []
+servers: []
+components:
+  schemas:
+    CreateShortUrlDto:
+      type: object
+      properties:
+        url:
+          type: string
+          example: https://example.com
+      required:
+        - url
+    CreateShortUrlResponseDto:
+      type: object
+      properties:
+        key:
+          type: string
+          example: abc123
+        short_url:
+          type: string
+          example: http://localhost:3352/shorten_url/abc123
+      required:
+        - key
+        - short_url

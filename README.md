@@ -1,4 +1,4 @@
-# Courtside Backend
+# URL Shortener Backend
 
 This repo is a small NestJS URL shortener service built for interview discussion and technical review. It focuses on a clean backend shape: short URL creation, redirect handling, in-memory storage, JSON persistence, Swagger/OpenAPI docs, Docker support, and test coverage around the important behaviors.
 

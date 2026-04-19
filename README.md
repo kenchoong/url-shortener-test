@@ -175,25 +175,10 @@ npm run test:e2e
 
 `docker-compose.yml` is configured so that:
 
-- host port `3352` maps to container port `3000`
-- the Nest app listens on port `3000` inside the container
+- host port `3352` maps to container port `3001`
+- the Nest app listens on port `3001` inside the container
 - `./data` is mounted into `/app/data`
 - the persisted file is `/app/data/store.json` inside the container, which means it ends up in the repo's local `data/` folder on the host machine
-
-## Railway Port Behavior
-
-Railway and local Docker expose ports differently:
-
-- Local development: if `.env` sets `PORT=3352`, the app listens on `http://localhost:3352`
-- Docker Compose: the container still listens on `3000`, but Docker maps host `3352` to container `3000`
-- Railway: the platform injects its own `PORT` value for the container to listen on internally, but the public app URL is still the generated Railway domain, not `:<PORT>` on that domain
-
-That means two separate things need to be true on Railway:
-
-1. The Nest app must listen on `process.env.PORT`
-2. You must open the Railway-provided public domain, usually without appending the internal container port
-
-If Railway injects `PORT=3352`, that does not mean `https://your-service.up.railway.app:3352` becomes reachable. It means the container should bind to port `3352` internally so Railway's proxy can forward traffic to it.
 
 ## Documentation Options
 

@@ -2,6 +2,20 @@
 
 This repo is a small NestJS URL shortener service built for interview discussion and technical review. It focuses on a clean backend shape: short URL creation, redirect handling, in-memory storage, JSON persistence, Swagger/OpenAPI docs, Docker support, and test coverage around the important behaviors.
 
+## Table of Contents
+
+- [Quick Start With Docker](#quick-start-with-docker)
+- [Development](#development)
+- [API Overview](#api-overview)
+- [POST /shorten_url](#post-shorten_url)
+- [GET /shorten_url/:key](#get-shorten_urlkey)
+- [Storage Mechanism](#storage-mechanism)
+- [Logging](#logging)
+- [Tests](#tests)
+- [Docker Compose Notes](#docker-compose-notes)
+- [Documentation Options](#documentation-options)
+- [LLM-Assisted Development Workflow](#llm-assisted-development-workflow)
+
 ## Quick Start With Docker
 
 If you want the fastest way to run it:

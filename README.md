@@ -193,6 +193,7 @@ Related project docs:
 - `docs/implementation-status.md`
 - `docs/build-notes/`
 - `diagrams/`
+  The files in this folder are Mermaid diagram source files. You can open them in `https://mermaid.live/` or use a Mermaid diagram editor/extension in your IDE to visualize them.
 
 ## LLM-Assisted Development Workflow
 
@@ -213,7 +214,7 @@ Main workflow pieces:
 - `docs/api/`
   Keeps the generated API artifacts checked into the repo.
 - `diagrams/`
-  Keeps the backend flow visible in a quick-to-review format.
+  Keeps the backend flow visible in a quick-to-review format. The files are Mermaid diagrams, so reviewers can paste them into `https://mermaid.live/` or use a Mermaid diagram extension in their editor to render them.
 
 Why this matters in practice:
 

@@ -196,7 +196,7 @@ Related project docs:
 
 ## LLM-Assisted Development Workflow
 
-This repo was developed with an LLM-assisted workflow, currently using Codex. The process is intentionally documented so the interviewer can see how the work was managed, not just the final code.
+This repo was developed with an LLM-assisted workflow, currently using Codex. The process is intentionally documented so any party interested can see how the work was managed, not just the final code.
 
 Main workflow pieces:
 

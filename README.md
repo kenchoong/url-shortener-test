@@ -21,7 +21,7 @@ This repo is a small NestJS URL shortener service built for interview discussion
 If you want the fastest way to run it:
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 
 That starts the app on:
